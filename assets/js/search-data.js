@@ -438,11 +438,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_little_prince/";
-            },},{id: "news-hourned-with-gold-medal",
-          title: 'Hourned with Gold Medal',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_4/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
@@ -451,6 +446,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
+            },},{id: "news-hourned-with-gold-medal",
+          title: 'Hourned with Gold Medal',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_4/";
             },},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
