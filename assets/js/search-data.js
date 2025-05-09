@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+          description: "Selected Github repositories",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
@@ -438,16 +438,21 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_little_prince/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-hourned-with-gold-medal",
+          title: 'Hourned with Gold Medal',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_4/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-invited-talk-at-national-workshop-on-topology-for-data-analysis",
+          title: 'Invited Talk at National Workshop on Topology for Data Analysis',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
+          title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
