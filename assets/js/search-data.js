@@ -65,26 +65,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-",
+            },{id: "post-understanding-linear-algebra-part-1",
         
-          title: "",
+          title: "Understanding Linear Algebra - Part 1",
         
-        description: "",
+        description: "A deep dive into the fundamentals of linear algebra using advanced visualization techniques.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/2025-05-09-linalgebra2/";
-          
-        },
-      },{id: "post-",
-        
-          title: "",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/2025-05-09-linalgebra/";
+            window.location.href = "/blog/2025/linalgebra/";
           
         },
       },{id: "post-a-post-with-plotly-js",
