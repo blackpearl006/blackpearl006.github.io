@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> <html><body> <p>In the first part of this series, we explored the <strong>row picture</strong>, <strong>column picture</strong>, and <strong>matrix form</strong> of a system of equations, along with the <strong>elimination method</strong>. In this post, we will dive into <strong>determinants</strong>, <strong>inverse matrices</strong>, and their applications in solving systems of equations.</p> <hr> <h2 id="determinants">Determinants</h2> <p>The determinant is a scalar value that can be computed from the elements of a square matrix. It provides important information about the matrix, such as whether it is invertible.</p> <h3 id="determinant-of-a-2x2-matrix">Determinant of a 2x2 Matrix</h3> <p>For a 2x2 matrix:</p> \[A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\] <p>The determinant is calculated as:</p> \[\text{det}(A) = ad - bc\] <h3 id="example-determinant-of-a-matrix">Example: Determinant of a Matrix</h3> <p>Consider the matrix:</p> \[A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\] <p>The determinant is:</p> \[\text{det}(A) = (1)(4) - (2)(3) = 4 - 6 = -2\] <p>Since the determinant is non-zero, the matrix is invertible.</p> <hr> <h2 id="inverse-matrices">Inverse Matrices</h2> <p>The inverse of a square matrix ( A ) is a matrix ( A^{-1} ) such that:</p> \[A A^{-1} = A^{-1} A = I\] <p>Where ( I ) is the identity matrix.</p> <h3 id="formula-for-the-inverse-of-a-2x2-matrix">Formula for the Inverse of a 2x2 Matrix</h3> <p>For a 2x2 matrix:</p> \[A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\] <p>If ( \text{det}(A) \neq 0 ), the inverse is given by:</p> \[A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}\] <h3 id="example-inverse-of-a-matrix">Example: Inverse of a Matrix</h3> <p>Using the matrix ( A ) from the previous example:</p> \[A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\] <p>The determinant is ( -2 ). The inverse is:</p> \[A^{-1} = \frac{1}{-2} \begin{bmatrix} 4 &amp; -2 \\ -3 &amp; 1 \end{bmatrix} = \begin{bmatrix} -2 &amp; 1 \\ 1.5 &amp; -0.5 \end{bmatrix}\] <hr> <h2 id="solving-systems-of-equations-using-inverse-matrices">Solving Systems of Equations Using Inverse Matrices</h2> <p>A system of equations can be written in matrix form as:</p> \[AX = B\] <p>Where ( A ) is the coefficient matrix, ( X ) is the column vector of variables, and ( B ) is the column vector of constants. If ( A ) is invertible, the solution is:</p> \[X = A^{-1}B\] <h3 id="example-solving-a-system-using-the-inverse">Example: Solving a System Using the Inverse</h3> <p>Consider the system:</p> \[\begin{aligned} x + 2y &amp;= 5 \\ 3x + 4y &amp;= 6 \end{aligned}\] <p>In matrix form:</p> \[\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}\] <p>The inverse of ( A ) is:</p> \[A^{-1} = \begin{bmatrix} -2 &amp; 1 \\ 1.5 &amp; -0.5 \end{bmatrix}\] <p>Multiply ( A^{-1} ) by ( B ):</p> \[X = A^{-1}B = \begin{bmatrix} -2 &amp; 1 \\ 1.5 &amp; -0.5 \end{bmatrix} \begin{bmatrix} 5 \\ 6 \end{bmatrix} = \begin{bmatrix} -4 \\ 4.5 \end{bmatrix}\] <p>The solution is ( x = -4, y = 4.5 ).</p> <hr> <h2 id="visualizing-determinants-with-chartjs">Visualizing Determinants with Chart.js</h2> <p>The determinant of a 2x2 matrix can be visualized as the area of a parallelogram formed by its column vectors.</p> <pre><code class="language-chartjs">{
+  "type": "scatter",
+  "data": {
+    "datasets": [
+      {
+        "label": "Vector 1",
+        "data": [{ "x": 1, "y": 3 }],
+        "backgroundColor": "rgba(75,192,192,1)"
+      },
+      {
+        "label": "Vector 2",
+        "data": [{ "x": 2, "y": 4 }],
+        "backgroundColor": "rgba(255,99,132,1)"
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "x": { "type": "linear", "position": "bottom" },
+      "y": { "type": "linear" }
+    }
+  }
+}
+</code></pre> <hr> <p>In the next part, we will explore <strong>eigenvalues</strong>, <strong>eigenvectors</strong>, and their significance in linear transformations.</p> </body></html>
