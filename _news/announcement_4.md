@@ -7,6 +7,6 @@ related_posts: false
 ---
 
 Honored with Gold Medal!!! 🏅
-![Gold Medal](../../assets/img/gold.png)
+![Gold Medal](../../assets/img/gold.png){: width="50%" height="50%"}
 
 We are thrilled to announce that we have been honored with a prestigious gold medal for our outstanding achievements. This recognition is a testament to our hard work and dedication. Thank you for your continued support!

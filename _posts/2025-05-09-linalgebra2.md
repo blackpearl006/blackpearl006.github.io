@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding Linear Algebra - Part 2: Determinants, Inverse Matrices, and Applications
+title: Understanding Linear Algebra - Part 2
 date: 2025-05-10
 description: Exploring the power of determinants and inverse matrices in solving systems of equations.
 tags: linear-algebra charts

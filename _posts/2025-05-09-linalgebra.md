@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding Linear Algebra - Part 1: Row Picture, Column Picture, and Matrix Form
+title: Understanding Linear Algebra - Part 1
 date: 2025-05-09
 description: A deep dive into the fundamentals of linear algebra using advanced visualization techniques.
 tags: linear-algebra charts
