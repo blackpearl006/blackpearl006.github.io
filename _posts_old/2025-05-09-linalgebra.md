@@ -5,7 +5,6 @@ date: 2025-05-09
 description: A deep dive into the fundamentals of linear algebra using advanced visualization techniques.
 tags: linear-algebra charts
 categories: mathematics
-featured: true
 chart:
   chartjs: true
 ---
