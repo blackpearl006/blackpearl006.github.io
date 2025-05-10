@@ -3,7 +3,7 @@ layout: distill
 title: Determinants and Their Properties
 description: A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations.
 tags: linear-algebra determinants distill
-date: 2025-05-11
+date: 2025-05-10
 featured: true
 chart:
   chartjs: true
