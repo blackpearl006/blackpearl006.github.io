@@ -142,7 +142,6 @@ The elimination method transforms the system into an equivalent one that is easi
 The solution is \( x = -4, y = 4.5 \).
 
 ---
-
 ### Example 2: Another System
 
 Solve the system:
@@ -155,17 +154,17 @@ x - y &= 2
 $$
 
 1. Add the equations:
-   $$
-   (2x + y) + (x - y) = 8 + 2 \\
-   3x = 10 \implies x = \frac{10}{3}
-   $$
+    $$
+    (2x + y) + (x - y) = 8 + 2 \\
+    3x = 10 \implies x = \frac{10}{3}
+    $$
 
 2. Substitute \( x = \frac{10}{3} \) into the second equation:
-   $$
-   \frac{10}{3} - y = 2 \implies y = \frac{4}{3}
-   $$
+    $$
+    \frac{10}{3} - y = 2 \implies y = \frac{10}{3} - 6 \implies y = -\frac{8}{3}
+    $$
 
-The solution is \( x = \frac{10}{3}, y = \frac{4}{3} \).
+The solution is \( x = \frac{10}{3}, y = -\frac{8}{3} \).
 
 ---
 

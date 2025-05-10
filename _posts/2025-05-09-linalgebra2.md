@@ -1,21 +1,33 @@
 ---
-layout: post
+layout: distill
 title: Understanding Linear Algebra - Part 2
+description: A comprehensive exploration of determinants, inverse matrices, and their applications in solving systems of equations, with interactive visualizations.
+tags: linear-algebra charts distill
 date: 2025-05-10
-description: Exploring the power of determinants and inverse matrices in solving systems of equations.
-tags: linear-algebra charts
-categories: mathematics
 chart:
   chartjs: true
+  vega_lite: true
+  echarts: true
+tikzjax: true
+typograms: true
+authors:
+  - name: Ninad
+    url: "https://github.com/blackpearl006"
+toc:
+  - name: Determinants
+  - name: Inverse Matrices
+  - name: Solving Systems of Equations
+  - name: Visualizing Determinants
+  - name: Applications
 ---
 
-In the first part of this series, we explored the **row picture**, **column picture**, and **matrix form** of a system of equations, along with the **elimination method**. In this post, we will dive into **determinants**, **inverse matrices**, and their applications in solving systems of equations.
+In the first part of this series, we explored the **row picture**, **column picture**, and **matrix form** of a system of equations, along with the **elimination method**. In this post, we will dive deeper into **determinants**, **inverse matrices**, and their applications in solving systems of equations. We'll also use interactive visualizations to make these concepts more intuitive.
 
 ---
 
 ## Determinants
 
-The determinant is a scalar value that can be computed from the elements of a square matrix. It provides important information about the matrix, such as whether it is invertible.
+The determinant is a scalar value that provides critical information about a matrix, such as whether it is invertible or the volume scaling factor of a transformation.
 
 ### Determinant of a 2x2 Matrix
 
@@ -184,9 +196,9 @@ The solution is \( x = -4, y = 4.5 \).
 
 ---
 
-## Visualizing Determinants with Chart.js
+## Visualizing Determinants
 
-The determinant of a 2x2 matrix can be visualized as the area of a parallelogram formed by its column vectors.
+The determinant of a 2x2 matrix can be visualized as the area of a parallelogram formed by its column vectors. Below is an interactive visualization using **Chart.js**:
 
 ```chartjs
 {
@@ -216,4 +228,20 @@ The determinant of a 2x2 matrix can be visualized as the area of a parallelogram
 
 ---
 
-In the next part, we will explore **eigenvalues**, **eigenvectors**, and their significance in linear transformations.
+## Applications of Determinants and Inverse Matrices
+
+### 1. **Checking Matrix Invertibility**
+
+A matrix is invertible if and only if its determinant is non-zero. This property is crucial in solving systems of equations and performing linear transformations.
+
+### 2. **Linear Transformations**
+
+Determinants can be used to measure how a linear transformation scales or flips the space. For example, a determinant of \( -1 \) indicates a reflection.
+
+### 3. **Solving Real-World Problems**
+
+Inverse matrices are widely used in fields like computer graphics, physics simulations, and machine learning to solve systems of linear equations efficiently.
+
+---
+
+In the next part, we will explore **eigenvalues**, **eigenvectors**, and their significance in linear transformations, along with more interactive visualizations.
