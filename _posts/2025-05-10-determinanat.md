@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: Understanding Linear Algebra - Determinants and Their Properties
+title: Determinants and Their Properties
 description: A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations.
 tags: linear-algebra determinants distill
 date: 2025-05-11
