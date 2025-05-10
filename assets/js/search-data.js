@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-understanding-linear-algebra-part-2",
+            },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/2025-05-10-determinanat/";
+          
+        },
+      },{id: "post-understanding-linear-algebra-part-2",
         
           title: "Understanding Linear Algebra - Part 2",
         
