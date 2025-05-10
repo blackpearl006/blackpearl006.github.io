@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: distill
 title: "Understanding Linear Algebra - Part 3"
 description: "A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations."
 tags: [linear-algebra, distill]
