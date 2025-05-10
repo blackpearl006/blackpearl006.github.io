@@ -73,7 +73,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/2025-05-10-determinanat/";
+            window.location.href = "/blog/2025/2025-05-10-determinant/";
           
         },
       },{id: "post-understanding-linear-algebra-part-2",
@@ -120,17 +120,7 @@ ninja.data = [{
             window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "books-the-little-prince",
-          title: 'The Little Prince',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_little_prince/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+      },{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "news-invited-talk-at-national-workshop-on-topology-for-data-analysis",
