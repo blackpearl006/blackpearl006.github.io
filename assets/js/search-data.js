@@ -65,15 +65,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-",
+            },{id: "post-understanding-linear-algebra-part-3",
         
-          title: "",
+          title: "Understanding Linear Algebra - Part 3",
         
-        description: "",
+        description: "A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/2025-05-10-determinant/";
+            window.location.href = "/blog/2025/determinant/";
           
         },
       },{id: "post-understanding-linear-algebra-part-2",
