@@ -164,20 +164,23 @@ ninja.data = [{
             window.open("https://medium.com/@daminininad/what-makes-the-analysis-of-mri-data-challenging-37fe5b5a6ec6?source=rss-d7ec2ddc2fdc------2", "_blank");
           
         },
-      },{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-invited-talk-at-national-workshop-on-topology-for-data-analysis",
+      },{id: "news-invited-talk-at-national-workshop-on-topology-for-data-analysis",
           title: 'Invited Talk at National Workshop on Topology for Data Analysis',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-hourned-with-gold-medal",
+            },},{id: "news-our-work-persistent-homology-for-mci-classification-a-comparative-analysis-between-graph-and-vietoris-rips-filtrations-has-been-accepted-at-frontiers-in-neuroscience",
+          title: 'Our work Persistent Homology for MCI Classification: A Comparative Analysis between Graph and...',
+          description: "",
+          section: "News",},{id: "news-hourned-with-gold-medal",
           title: 'Hourned with Gold Medal',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_4/";
-            },},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
+            },},{id: "news-catch-my-interview-for-iitm-bs-degree-programme-sparkles-smile",
+          title: 'Catch my interview for IITM-BS Degree Programme ! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
           section: "News",},{id: "projects-project-1",
