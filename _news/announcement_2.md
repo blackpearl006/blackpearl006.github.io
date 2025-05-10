@@ -12,5 +12,9 @@ During the event, I shared our recent research on utilizing topological features
 
 Other resource persons included:
 1) Dr. Vinodkumar P B, Research Professor, MITS, Varikoli.
+
 2) Dr. Amit Chattopadhyay, Associate Professor, IIIT Bengaluru.
+
 3) Prof. Neelam Sinha, Associate Professor, IISC Bengaluru.
+
+click here: [link](https://mgmits.ac.in/two-day-national-workshop-on-topology-for-data-analysis/)
