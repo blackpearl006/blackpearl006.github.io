@@ -3,7 +3,7 @@ layout: distill
 title: Understanding Linear Algebra - Part 2
 description: A comprehensive exploration of determinants, inverse matrices, and their applications in solving systems of equations, with interactive visualizations.
 tags: linear-algebra charts distill
-date: 2025-05-10
+date: 2025-05-09
 featured: true
 chart:
   chartjs: true

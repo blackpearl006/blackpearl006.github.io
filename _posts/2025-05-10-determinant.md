@@ -1,8 +1,8 @@
 ---
-layout: distill
-title: Determinants and Their Properties
-description: A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations.
-tags: linear-algebra determinants distill
+layout: post
+title: "Understanding Linear Algebra - Part 3"
+description: "A detailed exploration of the 8 fundamental properties of determinants with examples and visualizations."
+tags: [linear-algebra, distill]
 date: 2025-05-10
 featured: true
 chart:
@@ -14,16 +14,7 @@ typograms: true
 authors:
   - name: Ninad
     url: "https://github.com/blackpearl006"
-toc:
-  - name: Introduction
-  - name: Property 1: Determinant of Identity Matrix
-  - name: Property 2: Row Exchange and Sign Reversal
-  - name: Property 3: Linear Transformations
-  - name: Property 4: Equal Rows or Columns
-  - name: Property 5: Row Operations and Elimination
-  - name: Property 6: Row of Zeroes
-  - name: Property 7: Upper Triangular Matrices
-  - name: Property 8: Singular Matrices
+toc: true
 ---
 
 Determinants are a fundamental concept in linear algebra, providing insights into matrix properties, linear transformations, and system solvability. In this post, we will explore the **8 key properties of determinants**, their significance, and examples to illustrate each property.
