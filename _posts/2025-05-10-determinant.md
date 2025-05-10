@@ -14,7 +14,17 @@ typograms: true
 authors:
   - name: Ninad
     url: "https://github.com/blackpearl006"
-toc: true
+toc: 
+  - name: "Introduction"
+  - name: "Property 1: Determinant of the Identity Matrix"
+  - name: "Property 2: Row Exchange and Sign Reversal"
+  - name: "Property 3: Linear Transformations"
+  - name: "Property 4: Equal Rows or Columns"
+  - name: "Property 5: Row Operations and Elimination"
+  - name: "Property 6: Row of Zeroes"
+  - name: "Property 7: Upper Triangular Matrices"
+  - name: "Property 8: Singular Matrices"
+  - name: "Visualizing Determinants"
 ---
 
 Determinants are a fundamental concept in linear algebra, providing insights into matrix properties, linear transformations, and system solvability. In this post, we will explore the **8 key properties of determinants**, their significance, and examples to illustrate each property.
