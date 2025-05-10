@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-understanding-linear-algebra-part-1",
+            },{id: "post-understanding-linear-algebra-part-2",
+        
+          title: "Understanding Linear Algebra - Part 2",
+        
+        description: "A comprehensive exploration of determinants, inverse matrices, and their applications in solving systems of equations, with interactive visualizations.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/linalgebra2/";
+          
+        },
+      },{id: "post-understanding-linear-algebra-part-1",
         
           title: "Understanding Linear Algebra - Part 1",
         
