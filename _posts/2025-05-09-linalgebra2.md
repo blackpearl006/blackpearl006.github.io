@@ -197,38 +197,6 @@ The solution is \( x = -4, y = 4.5 \).
 
 ---
 
-## Visualizing Determinants
-
-The determinant of a 2x2 matrix can be visualized as the area of a parallelogram formed by its column vectors. Below is an interactive visualization using **Chart.js**:
-
-```chartjs
-{
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "Vector 1",
-        "data": [{ "x": 1, "y": 3 }],
-        "backgroundColor": "rgba(75,192,192,1)"
-      },
-      {
-        "label": "Vector 2",
-        "data": [{ "x": 2, "y": 4 }],
-        "backgroundColor": "rgba(255,99,132,1)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": { "type": "linear", "position": "bottom" },
-      "y": { "type": "linear" }
-    }
-  }
-}
-```
-
----
-
 ## Applications of Determinants and Inverse Matrices
 
 ### 1. **Checking Matrix Invertibility**

@@ -281,36 +281,4 @@ Since the determinant is 0, \( A \) is singular and does not have an inverse.
 
 ---
 
-## Visualizing Determinants
-
-The determinant can be visualized as the scaling factor of the area (2D) or volume (3D) of the space transformed by the matrix. Below is an interactive plot showing how the determinant changes with row operations:
-
-```chartjs
-{
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "Original Matrix",
-        "data": [{ "x": 1, "y": 2 }, { "x": 3, "y": 4 }],
-        "backgroundColor": "rgba(75,192,192,1)"
-      },
-      {
-        "label": "Transformed Matrix",
-        "data": [{ "x": 1, "y": 2 }, { "x": 3, "y": 6 }],
-        "backgroundColor": "rgba(255,99,132,1)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": { "type": "linear", "position": "bottom" },
-      "y": { "type": "linear" }
-    }
-  }
-}
-```
-
----
-
 Determinants are a powerful tool in linear algebra, providing insights into matrix properties, transformations, and system solvability. In the next post, we will explore **eigenvalues**, **eigenvectors**, and their applications in understanding linear transformations.
