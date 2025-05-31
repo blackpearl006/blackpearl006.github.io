@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-understanding-linear-algebra-part-3",
+        },{id: "post-multi-site-mri-data-harmonization",
+        
+          title: 'Multi-Site MRI data Harmonization <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@daminininad/multi-site-mri-data-harmonization-67816bfc5596?source=rss-d7ec2ddc2fdc------2", "_blank");
+          
+        },
+      },{id: "post-understanding-linear-algebra-part-3",
         
           title: "Understanding Linear Algebra - Part 3",
         
@@ -207,6 +218,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-neurolight",
+          title: 'NeuroLight',
+          description: "MRI based Sex Classification Project",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/neurolight/";
             },},{
         id: 'social-email',
         title: 'email',
