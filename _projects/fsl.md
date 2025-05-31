@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: FSL
+description: Preprocessing MRI images with FSL
 img: assets/img/fsl/fsl.png
 importance: 1
 category: work
@@ -16,7 +16,7 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-10 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/processing.png" title="Preprocessing Flowchart" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/processing.png" title="Preprocessing Flowchart" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -32,7 +32,7 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/reorient.png" title="Reoriented Image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/reorient.png" title="Reoriented Image" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -44,7 +44,7 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/bias_corrected.png" title="Bias Corrected Image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/bias_corrected.png" title="Bias Corrected Image" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -57,10 +57,10 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/robust.png" title="Cropped FOV Image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/robust.png" title="Cropped FOV Image" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/brain.png" title="Skull-Stripped Brain" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/brain.png" title="Skull-Stripped Brain" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -74,18 +74,18 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/linreg6dof1mm.png" title="6 DOF to MNI (1mm)" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/linreg6dof1mm.png" title="6 DOF to MNI (1mm)" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/linreg_12dof_1mm.png" title="12 DOF to MNI (1mm)" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/linreg_12dof_1mm.png" title="12 DOF to MNI (1mm)" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="row mt-4">
   <div class="col-sm-6">
-    {% include figure.liquid path="assets/fsl/lin_reg6dof2mm.png" title="6 DOF to MNI (2mm)" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/lin_reg6dof2mm.png" title="6 DOF to MNI (2mm)" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-6">
-    {% include figure.liquid path="assets/fsl/linreg_12dof_2mm.png" title="12 DOF to MNI (2mm)" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/linreg_12dof_2mm.png" title="12 DOF to MNI (2mm)" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -101,10 +101,10 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/ninad_just_white_matter.png" title="WM Map (from FAST)" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/ninad_just_white_matter.png" title="WM Map (from FAST)" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/ninad_wm_mask.png" title="Binary WM Mask" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/ninad_wm_mask.png" title="Binary WM Mask" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
@@ -118,7 +118,7 @@ Prior to preprocessing, input files were converted to standardized NIFTI_GZ form
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/fsl/ninad_normalised.png" title="White Stripe Normalized T1w" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid path="assets/img/fsl/ninad_normalised.png" title="White Stripe Normalized T1w" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
