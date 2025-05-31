@@ -178,6 +178,11 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fsl/";
+            },},{id: "projects-neuro-imaging-navigation-and-datahub",
+          title: 'Neuro Imaging Navigation And Datahub',
+          description: "Open-access platform for exploring and analyzing neuroimaging datasets",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/neurodatahub/";
             },},{id: "projects-neurolight",
           title: 'NeuroLight',
           description: "MRI based Sex Classification Project",
