@@ -14,6 +14,8 @@ related_publications: false
 
 **NeuroLight** is a comprehensive deep learning pipeline for sex classification from MRI data, built with PyTorch and designed for reproducibility and scalability. This page showcases features, project structure, and usage instructions in a visually engaging format.
 
+This is a beginner-friendly guide to using artificial intelligence with neuroimaging data. This tutorial takes you step-by-step through the entire process, starting from loading and understanding MRI data, to building and training deep learning models in PyTorch. Along the way, you’ll learn essential AI and machine learning concepts, see how to set up a dataset for training, and explore real-world tasks like classifying brain images. With clear explanations and practical examples, this tutorial is designed to make complex ideas easy to understand, helping you get hands-on experience with AI in healthcare applications and giving you the skills to work on exciting neuroimaging projects from start to finish
+
 ---
 
 ## 🚀 Feature Showcase
@@ -64,8 +66,8 @@ Requires correct folder structure and dependencies.
 
 - **/models**  
 Model architectures:
-- SFCN (Shallow Fully Connected Network)
-- ResNet
+- `SFCN` (Simple Fully Convolutional Network)
+- `ResNet`
 
 - **/configs**  
 - `config.yaml`: Hyperparameters and model settings.
