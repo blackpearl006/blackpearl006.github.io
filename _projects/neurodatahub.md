@@ -96,5 +96,5 @@ A **preprint is coming soon** with the full technical documentation, data curati
   </div>
 </div>
 <div class="caption">
-    NeuroDataHub — Designed for neuroimaging scientists, by neuroimaging scientists.
+    NeuroDataHub — Designed for neuroimaging scientists, by me.
 </div>
