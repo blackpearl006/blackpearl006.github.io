@@ -2,7 +2,7 @@
 layout: page
 title: NeuroLight
 description: MRI based Sex Classification Project
-img: assets/img/neurolight.png
+img: assets/img/neurolight/logo.png
 importance: 1
 category: work
 related_publications: false
@@ -12,25 +12,18 @@ related_publications: false
 
 ## MRI-based Sex Classification Project
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**NeuroLight** is a comprehensive deep learning pipeline for sex classification from MRI data, built with PyTorch and designed for reproducibility and scalability. This page showcases features, project structure, and usage instructions in a visually engaging format.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+---
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## 🚀 Feature Showcase
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="MRI Data Pipeline" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/neurolight/processing.png" title="MRI Data Pipeline" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="Model Training" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/neurolight/cross_validation.png" title="Model Training" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="Visualization Tools" class="img-fluid rounded z-depth-1" %}
@@ -38,24 +31,113 @@ To give your project a background in the portfolio page, just add the img tag to
 </div>
 <div class="caption">
     <b>Left:</b> MRI data loading and preprocessing.<br>
-    <b>Middle:</b> Training deep neural networks on sex classification.<br>
+    <b>Middle:</b> Deep neural network training for sex classification.<br>
     <b>Right:</b> Visualizing results and metrics.
 </div>
 
-## Project Structure
+---
 
-The project consists of the following key components:
+## 📦 Project Structure
 
-### 1. `sex_classification.ipynb`
-- Standalone tutorial notebook for sex classification using PyTorch.
-- Step-by-step guide: model, dataset, and classification workflow.
-- Detailed walkthrough in this [Medium Article](https://medium.com/@daminininad/intro-to-ai-with-neuroimaging-data-a-end-to-end-tutorial-using-pytorch-f941c6ef547a).
+- **sex_classification.ipynb**  
+  Beginner-friendly notebook for sex classification using PyTorch.  
+  Step-by-step guide with dataset, model, and workflow.  
+  See the [Medium Tutorial](https://medium.com/@daminininad/intro-to-ai-with-neuroimaging-data-a-end-to-end-tutorial-using-pytorch-f941c6ef547a) for a detailed walkthrough.
 
-### 2. `crossvalidation_sexclassification.py`
-- Implements K-Fold Cross Validation to evaluate model performance.
-- Standalone script using PyTorch.
-- Enhances model generalization.
+- **crossvalidation_sexclassification.py**  
+  Implements K-Fold Cross Validation for robust model evaluation.  
+  Run independently to assess generalization.
 
-### 3. `ddp_sex.py` (Distributed Data Parallel)
-- Implements Distributed Data Parallel (DDP) for efficient multi-GPU training.
-- Run with:
+- **ddp_sex.py**  
+  Distributed Data Parallel (DDP) script for efficient multi-GPU training.  
+  Run with:  `torchrun –standalone –nproc_per_node=7 ddp_sex.py`
+
+Requires correct folder structure and dependencies.
+
+- **/data**  
+- `dataset.py`: Dataset class for loading and preprocessing.
+- `dataloader.py`: Handles batching, shuffling, and data loaders.
+
+- **/utils**  
+- `trainer.py`: Training loop, forward/backward passes, evaluation.
+- `visualisation.py`: Visualizes training loss, confusion matrices, and more.
+
+- **/models**  
+Model architectures:
+- SFCN (Shallow Fully Connected Network)
+- ResNet
+
+- **/configs**  
+- `config.yaml`: Hyperparameters and model settings.
+
+- **requirements.txt**  
+Python dependencies. Install with:  `pip install -r requirements.txt`
+
+
+---
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="assets/img/neurolight/cross_validation.png" title="K-Fold Cross-Validation" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  K-Fold cross-validation ensures robust and reliable model evaluation.
+</div>
+
+---
+
+## 🛠️ How to Use
+
+### 1. Clone the Repository
+`git clone https://github.com/blackpearl006/Neurolight`
+`cd Neurolight`
+
+
+### 2. Install Dependencies
+`pip install -r requirements.txt`
+
+
+### 3. Run the Code
+
+- **Tutorial Notebook**  
+  Open `sex_classification.ipynb` in Jupyter and run the cells.
+
+- **K-Fold Cross-Validation**  
+  python3 crossvalidation_sexclassification.py
+
+- **Distributed Training**  
+  torchrun –standalone –nproc_per_node=7 ddp_sex.py
+
+---
+
+## 📁 Folder Overview
+
+/data     - Dataset and data processing utilities
+/utils    - Training and visualization scripts
+/models   - Model definitions (SFCN, ResNet, etc.)
+/configs  - Hyperparameter and model config files
+---
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/6.jpg" title="Distributed Training" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/11.jpg" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Distributed training (left) helps scale your experiments. Confusion matrices (right) provide model insight.
+</div>
+
+---
+
+## 🎯 Conclusion
+
+NeuroLight offers a robust, scalable, and well-documented pipeline for sex classification using MRI data and deep learning.  
+From beginner tutorials to advanced distributed training, this project provides everything you need to advance your neuroimaging AI research.
+
+---
+
+*Ready to illuminate your research with NeuroLight? Dive into the code and let the discoveries begin!*
