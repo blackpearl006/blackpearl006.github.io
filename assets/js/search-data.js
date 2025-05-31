@@ -173,9 +173,14 @@ ninja.data = [{
           section: "News",},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-foundation-models-for-llms-and-neuroimaging",
+          title: 'Foundation Models for LLMs and Neuroimaging',
+          description: "In-progress project on building large-scale models for brain and language data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/foundation/";
+            },},{id: "projects-fsl",
+          title: 'FSL',
+          description: "Preprocessing MRI images with FSL",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fsl/";
             },},{id: "projects-neuro-imaging-navigation-and-datahub",
