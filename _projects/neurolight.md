@@ -26,13 +26,13 @@ related_publications: false
         {% include figure.liquid loading="eager" path="assets/img/neurolight/cross_validation.png" title="Model Training" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="Visualization Tools" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/neurolight/sfcn.png" title="SFCN Model" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     <b>Left:</b> MRI data loading and preprocessing.<br>
     <b>Middle:</b> Deep neural network training for sex classification.<br>
-    <b>Right:</b> Visualizing results and metrics.
+    <b>Right:</b> Simple Fully Convolutional Network model.
 </div>
 
 ---
@@ -119,12 +119,13 @@ Python dependencies. Install with:  `pip install -r requirements.txt`
 /configs  - Hyperparameter and model config files
 ---
 
+
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="Distributed Training" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/neurolight/ddp.png" title="Distributed Training" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/neurolight/confusion_matrix.png" title="Confusion Matrix" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
