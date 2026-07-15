@@ -44,7 +44,40 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-multi-site-mri-data-harmonization",
+        },{id: "post-recurrence-plots",
+        
+          title: 'Recurrence Plots <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@daminininad/recurrence-plots-86890732535f?source=rss-d7ec2ddc2fdc------2", "_blank");
+          
+        },
+      },{id: "post-getting-started-in-neuroai-without-spending-months-on-preprocessing",
+        
+          title: 'Getting Started in NeuroAI Without Spending Months on Preprocessing <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@daminininad/getting-started-in-neuroai-without-spending-months-on-preprocessing-782e8f2cffb7?source=rss-d7ec2ddc2fdc------2", "_blank");
+          
+        },
+      },{id: "post-neuro-data-hub",
+        
+          title: 'Neuro Data Hub <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@daminininad/neuro-data-hub-3a6fcfd33c01?source=rss-d7ec2ddc2fdc------2", "_blank");
+          
+        },
+      },{id: "post-multi-site-mri-data-harmonization",
         
           title: 'Multi-Site MRI data Harmonization <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
@@ -173,6 +206,9 @@ ninja.data = [{
           section: "News",},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
+          section: "News",},{id: "news-excited-to-be-joining-the-origami-lab-at-the-neuro-mni-mcgill-university-as-an-incoming-msc-student-in-the-integrated-program-in-neuroscience",
+          title: 'Excited to be joining the ORIGAMI Lab at The Neuro (MNI), McGill University...',
+          description: "",
           section: "News",},{id: "projects-foundation-models-neuroimaging",
           title: 'Foundation Models Neuroimaging',
           description: "In-progress project on building foundation model",
@@ -193,6 +229,11 @@ ninja.data = [{
           description: "MRI based Sex Classification Project",
           section: "Projects",handler: () => {
               window.location.href = "/projects/neurolight/";
+            },},{id: "projects-niramai-thermalytix",
+          title: 'Niramai — Thermalytix',
+          description: "AI + thermal imaging for early, non-invasive breast-cancer screening",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/niramai/";
             },},{
         id: 'social-email',
         title: 'email',
