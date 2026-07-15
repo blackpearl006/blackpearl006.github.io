@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://val.cds.iisc.ac.in/index.html'>Project Associate</a>. Vison and AI Lab @ Indian Institute of Science
+subtitle: Incoming MSc Student, ORIGAMI Lab @ The Neuro (MNI), McGill University
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>#212 VAL</p>
-    <p>CDS, IISc</p>
-    <p>Bengaluru 560012</p>
+    <p>The Neuro (MNI)</p>
+    <p>McGill University</p>
+    <p>Montréal, QC</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -33,8 +33,8 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am a traveler at heart, drawn to the excitement and curiosity that research brings. My research areas span computer vision and medical imaging, where I explore the intersection of technology and human health. 
+I am an incoming MSc student in the [Integrated Program in Neuroscience](https://www.mcgill.ca/ipn/) at McGill University, joining the ORIGAMI Lab at The Neuro (Montreal Neurological Institute) under Jean-Baptiste Poline. My research spans neuroimaging, medical image analysis, and machine learning for brain health.
 
-Alongside my research, I am a part-time web developer, focusing on creating innovative platforms that bridge gaps in scientific communication. [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/)
+Alongside research, I build open tools for neuroscience — most recently [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/), an open-access platform for exploring and comparing large-scale neuroimaging datasets.
 
-Currently, I am expanding my knowledge in [foundation modeling](https://stanford-cs336.github.io/spring2025/) for large language models (LLMs) and their applications in medical image analysis, aiming to contribute to the evolving landscape of AI in healthcare.
+I'm broadly interested in [foundation modeling](https://stanford-cs336.github.io/spring2025/) for neuroimaging and in federated learning across imaging sites — bringing models to data spread over hospitals and cohorts, so studies can scale without centralizing sensitive scans.

@@ -2,96 +2,69 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Ninad Aithal
+    - name: Location
+      value: Montréal, QC (from Aug 2026) · Bengaluru, India
+    - name: Fields
+      value: Neuroimaging, Medical Image Analysis, Machine Learning
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: MSc, Integrated Program in Neuroscience
+      institution: McGill University — The Neuro (MNI), Montréal, Canada
+      year: 2026 - 2028
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - ORIGAMI Lab, supervised by Jean-Baptiste Poline.
+        - Federated learning for disease progression (PD/AD) across neuroimaging sites.
+    - title: Bachelor's Degree # [confirm] exact degree title + years
+      institution: Srinivas University (SUIET), India
+      year: # [confirm]
       description:
-        - Description 1.
-        - Description 2.
+        - Graduated with a Gold Medal.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: AI / Machine Learning # [confirm] exact title + start month
+      institution: Niramai Health Analytix, Bengaluru
+      year: 2025 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Thermalytix — AI + thermal imaging for early, non-invasive breast-cancer screening.
+        - # [confirm] one line on your specific contribution.
+    - title: Project Associate
+      institution: Vision and AI Lab (VAL), CDS, Indian Institute of Science, Bengaluru
+      year: # [confirm] dates
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Computer vision and medical imaging research.
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://blackpearl006.github.io/NeuroDataHub/">NeuroDataHub</a>
+      year: 2025 - now
+      description: Open-access platform for exploring and comparing 50+ public neuroimaging datasets (50,000+ brain scans).
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Frontiers in Neuroscience paper accepted — Persistent Homology for MCI classification.
+        - Gold Medal, Srinivas University.
+    - year: 2025
       items:
-        - Max Planck Medal
+        - Invited talk — National Workshop on Topology for Data Analysis, Kochi.
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Neuroimaging & medical image analysis
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - MRI-based modeling of brain health and neurodegeneration.
+        - Cross-cohort harmonization and site effects.
+    - title: Machine learning
       items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+        - Foundation models for neuroimaging.
+        - Federated learning across imaging sites.
+        - Topological data analysis.
