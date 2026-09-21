@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Incoming MSc Student, ORIGAMI Lab @ The Neuro (MNI), McGill University
+subtitle: MSc Student, Integrated Program in Neuroscience, McGill University
 
 profile:
   align: right
@@ -33,8 +33,10 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am an incoming MSc student in the [Integrated Program in Neuroscience](https://www.mcgill.ca/ipn/) at McGill University, joining the ORIGAMI Lab at The Neuro (Montreal Neurological Institute) under Jean-Baptiste Poline. My research spans neuroimaging, medical image analysis, and machine learning for brain health.
+I am an MSc student in the [Integrated Program in Neuroscience](https://www.mcgill.ca/ipn/) at McGill University. Since moving to Montréal in August 2026, I have been working in the ORIGAMI Lab at The Neuro (Montreal Neurological Institute) under Jean-Baptiste Poline. My research spans neuroimaging, medical image analysis, and machine learning for brain health.
 
-Alongside research, I build open tools for neuroscience — most recently [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/), an open-access platform for exploring and comparing large-scale neuroimaging datasets.
+I am also a maintainer of [Nipoppy](https://github.com/nipoppy/nipoppy), contributing to open and reproducible neuroimaging workflows. My current research investigates how PET imaging, longitudinal MRI, and cognitive measures can characterize cognitive decline, including in federated settings where data remain at participating sites.
+
+Alongside research, I build open tools for neuroscience — most recently [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/), an open-source catalogue and downloader for public neuroimaging datasets. It brings together 50+ curated datasets and 50,000+ brain scans, and has been used by more than 1,000 people; ChatGPT is among its largest referral sources.
 
 I'm broadly interested in [foundation modeling](https://stanford-cs336.github.io/spring2025/) for neuroimaging and in federated learning across imaging sites — bringing models to data spread over hospitals and cohorts, so studies can scale without centralizing sensitive scans.

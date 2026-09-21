@@ -26,24 +26,29 @@
 - title: Experience
   type: time_table
   contents:
-    - title: AI / Machine Learning # [confirm] exact title + start month
+    - title: AI / Machine Learning
       institution: Niramai Health Analytix, Bengaluru
-      year: 2025 - present
+      year: 2025 - 2026
       description:
         - Thermalytix — AI + thermal imaging for early, non-invasive breast-cancer screening.
-        - # [confirm] one line on your specific contribution.
+        - Worked across research, production, and business teams on machine-learning and deployment work.
     - title: Project Associate
       institution: Vision and AI Lab (VAL), CDS, Indian Institute of Science, Bengaluru
       year: # [confirm] dates
       description:
         - Computer vision and medical imaging research.
+    - title: Maintainer
+      institution: Nipoppy
+      year: 2026 - present
+      description:
+        - Contributing to open, reproducible neuroimaging workflows.
 
 - title: Open Source Projects
   type: time_table
   contents:
     - title: <a href="https://blackpearl006.github.io/NeuroDataHub/">NeuroDataHub</a>
       year: 2025 - now
-      description: Open-access platform for exploring and comparing 50+ public neuroimaging datasets (50,000+ brain scans).
+      description: Open-source catalogue and downloader for 50+ public neuroimaging datasets (50,000+ brain scans).
 
 - title: Honors and Awards
   type: time_table

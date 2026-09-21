@@ -1,24 +1,26 @@
 ---
 layout: page
 title: Neuro Imaging Navigation And Datahub
-description: Open-access platform for exploring and analyzing neuroimaging datasets
+description: Open-source catalogue and downloader for public neuroimaging datasets
 img: /assets/img/neurodatahub/logo.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-**Neuro Imaging Navigation And Datahub** (NeuroDataHub) is an open-access platform designed to help you **explore, compare, and analyze** neuroimaging datasets with ease. Whether you're a researcher, clinician, or student in neuroscience or AI, this site brings together an extensive collection of over **50 curated public datasets**, totaling more than **50,000 brain scans**.
+**Neuro Imaging Navigation And Datahub** (NeuroDataHub) is an open-source catalogue and downloader for public neuroimaging datasets. It brings together over **50 curated datasets**, totaling more than **50,000 brain scans**, so researchers can identify relevant datasets and access them more easily.
 
 Each dataset is accompanied by:
 - A short overview
 - Key metadata
 - Links to official sources
-- Potential research directions
+- Download support through the [NeuroDataHub CLI](https://github.com/blackpearl006/neurodatahub-cli)
 
 The goal is simple: **accelerate neuroimaging research** by centralizing and organizing accessible, high-quality data.
 
-🔗 **Visit:** [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/)
+🔗 **Explore:** [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/) · **Code:** [GitHub](https://github.com/blackpearl006/NeuroDataHub) · **Record:** [Zenodo](https://zenodo.org/records/15687811)
+
+More than **1,000 people** have used NeuroDataHub. Its analytics also show ChatGPT among its largest referral sources.
 
 ---
 
@@ -33,14 +35,14 @@ The goal is simple: **accelerate neuroimaging research** by centralizing and org
 
 ---
 
-### 🔍 Features
+### 🔍 Catalogue and download features
 
 - 🚀 Fast keyword-based search
-- 🧠 Dataset explorer: Table and grid view options
-- 📊 Filter by modalities, age range, population size, and more
-- 🧩 Metadata standardization across datasets
-- 📁 CSV format for easy downstream processing
-- 🔗 External links to official repositories
+- 🧠 Dataset catalogue with table and grid views
+- 📊 Filtering by modality, age range, population size, and more
+- 🧩 Standardized metadata across datasets
+- 📁 CSV export for downstream use
+- ⬇️ Download support through the NeuroDataHub CLI
 
 ---
 
@@ -61,9 +63,9 @@ The goal is simple: **accelerate neuroimaging research** by centralizing and org
 
 ---
 
-### 📂 Included Datasets
+### 📂 Included datasets
 
-The platform currently supports **50+ public neuroimaging datasets**, including but not limited to:
+The catalogue currently covers **50+ public neuroimaging datasets**, including but not limited to:
 
 ```
 ABIDE         ADNI         AOMIC_ID1000     BGSP        CAMCAN      CHBMP       COBRE
@@ -78,15 +80,15 @@ YALE_LowRes
 
 ---
 
-### 🧪 Research Utility
+### 🧪 Research utility
 
-NeuroDataHub is already being integrated into several research workflows, supporting questions in:
+NeuroDataHub supports research workflows such as:
 - Cross-cohort harmonization
 - Disease-specific neurodegeneration modeling
 - Data diversity analysis
 - Population-level MRI studies
 
-A **preprint is coming soon** with the full technical documentation, data curation protocol, and research use cases.
+The [Zenodo record](https://zenodo.org/records/15687811) documents the project and its data curation work.
 
 ---
 
