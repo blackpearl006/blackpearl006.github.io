@@ -206,8 +206,11 @@ ninja.data = [{
           section: "News",},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
           description: "",
-          section: "News",},{id: "news-excited-to-be-joining-the-origami-lab-at-the-neuro-mni-mcgill-university-as-an-incoming-msc-student-in-the-integrated-program-in-neuroscience",
-          title: 'Excited to be joining the ORIGAMI Lab at The Neuro (MNI), McGill University...',
+          section: "News",},{id: "news-our-preprint-data-driven-identification-of-sex-differences-in-cerebral-blood-flow-using-arterial-spin-labelling-and-explainable-artificial-intelligence-is-now-available-on-biorxiv",
+          title: 'Our preprint, Data-Driven Identification of Sex Differences in Cerebral Blood Flow Using Arterial...',
+          description: "",
+          section: "News",},{id: "news-started-my-msc-in-the-integrated-program-in-neuroscience-at-mcgill-university-and-joined-the-origami-lab-at-the-neuro-mni",
+          title: 'Started my MSc in the Integrated Program in Neuroscience at McGill University and...',
           description: "",
           section: "News",},{id: "projects-foundation-models-neuroimaging",
           title: 'Foundation Models Neuroimaging',
@@ -219,9 +222,14 @@ ninja.data = [{
           description: "Preprocessing MRI images with FSL",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fsl/";
+            },},{id: "projects-neuroai-template",
+          title: 'NeuroAI Template',
+          description: "Reusable website template for interactive neuroimaging atlases",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/neuroai-template/";
             },},{id: "projects-neuro-imaging-navigation-and-datahub",
           title: 'Neuro Imaging Navigation And Datahub',
-          description: "Open-access platform for exploring and analyzing neuroimaging datasets",
+          description: "Open-source catalogue and downloader for public neuroimaging datasets",
           section: "Projects",handler: () => {
               window.location.href = "/projects/neurodatahub/";
             },},{id: "projects-neurolight",
@@ -234,6 +242,11 @@ ninja.data = [{
           description: "AI + thermal imaging for early, non-invasive breast-cancer screening",
           section: "Projects",handler: () => {
               window.location.href = "/projects/niramai/";
+            },},{id: "projects-perfusion-xai",
+          title: 'Perfusion XAI',
+          description: "Explainable AI for sex differences in cerebral blood flow",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/perfusion-xai/";
             },},{
         id: 'social-email',
         title: 'email',
