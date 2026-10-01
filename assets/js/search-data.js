@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Selected Github repositories",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-cv",
           title: "cv",
           description: "NeuroAI",
@@ -200,11 +193,17 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_4/";
-            },},{id: "news-catch-my-interview-for-iitm-bs-degree-programme-sparkles-smile",
-          title: 'Catch my interview for IITM-BS Degree Programme ! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
+            },},{id: "news-neuro-imaging-navigation-and-datahub-goes-live",
           title: 'Neuro Imaging Navigation and Datahub goes live !!',
+          description: "",
+          section: "News",},{id: "news-served-as-a-technical-instructor-for-the-ihub-data-cross-skilling-program-for-marginalised-communities-dst-government-of-india-teaching-in-the-machine-learning-in-healthcare-program-for-students-from-scheduled-tribe-communities-at-am-reddy-group-of-institutions-narasaraopeta-andhra-pradesh",
+          title: 'Served as a technical instructor for the iHub-Data Cross-skilling Program for Marginalised Communities...',
+          description: "",
+          section: "News",},{id: "news-led-the-deployment-of-nipoppy-and-trained-the-team-at-nimhans-india-for-a-clinical-cohort-study-organizing-and-processing-imaging-data-from-700-participants",
+          title: 'Led the deployment of Nipoppy and trained the team at NIMHANS, India, for...',
+          description: "",
+          section: "News",},{id: "news-presented-our-cloud-to-edge-deployment-of-a-clinical-breast-screening-platform-at-the-intel-client-ecosystem-symposium-2026-in-taipei",
+          title: 'Presented our cloud-to-edge deployment of a clinical breast-screening platform at the Intel Client...',
           description: "",
           section: "News",},{id: "news-our-preprint-data-driven-identification-of-sex-differences-in-cerebral-blood-flow-using-arterial-spin-labelling-and-explainable-artificial-intelligence-is-now-available-on-biorxiv",
           title: 'Our preprint, Data-Driven Identification of Sex Differences in Cerebral Blood Flow Using Arterial...',
