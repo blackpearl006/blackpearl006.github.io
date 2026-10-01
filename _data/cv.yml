@@ -4,9 +4,9 @@
     - name: Full Name
       value: Ninad Aithal
     - name: Location
-      value: Montréal, QC (from Aug 2026) · Bengaluru, India
+      value: Montréal, QC
     - name: Fields
-      value: Neuroimaging, Medical Image Analysis, Machine Learning
+      value: Computational Neuroscience, Neuroimaging, Neuroinformatics, Medical AI
 
 - title: Education
   type: time_table
@@ -16,56 +16,139 @@
       year: 2026 - 2028
       description:
         - ORIGAMI Lab, supervised by Jean-Baptiste Poline.
-        - Federated learning for disease progression (PD/AD) across neuroimaging sites.
-    - title: Bachelor's Degree # [confirm] exact degree title + years
-      institution: Srinivas University (SUIET), India
-      year: # [confirm]
+        - Modelling Alzheimer's disease progression from longitudinal PET and MRI across multiple cohorts.
+        - Medical imaging foundation models and federated learning across neuroimaging sites.
+    - title: BS in Data Science and Applications
+      institution: Indian Institute of Technology Madras
+      year: 2021 - 2025
       description:
-        - Graduated with a Gold Medal.
+        - Graduated with a 4.0/4.0 GPA.
+        - One of two bachelor's degrees taken concurrently, enabled by <a href="https://www.education.gov.in/nep/nep-2020">NEP 2020</a>.
+    - title: B.Tech in Robotics, Artificial Intelligence and Machine Learning
+      institution: Srinivas University (SUIET), India
+      year: 2020 - 2024
+      description:
+        - Graduated with a 4.0/4.0 GPA (9.17/10) and the Departmental Gold Medal, ranked 1st in the department.
+        - "Thesis: MCI detection using fMRI time-series embeddings of recurrence plots."
+        - Taken concurrently with the IIT Madras BS.
 
 - title: Experience
   type: time_table
   contents:
-    - title: AI / Machine Learning
+    - title: Research Assistant (part-time)
+      institution: ORIGAMI Lab, The Neuro (MNI), McGill University
+      year: 2025 - 2026
+      description:
+        - Nov 2025 – Aug 2026, alongside industry work, before starting the MSc. Supervised by Jean-Baptiste Poline.
+        - Curated and harmonized longitudinal PET and MRI cohorts for Alzheimer's disease progression modelling.
+    - title: Maintainer
+      institution: <a href="https://github.com/nipoppy/nipoppy">Nipoppy</a>
+      year: 2026 - present
+      description:
+        - Open-source framework for standardized, reproducible processing of neuroimaging datasets.
+        - Built a telemetry module on OpenTelemetry that tracks pipeline execution and usage.
+        - Led Nipoppy deployment and training at NIMHANS, India, for a clinical cohort study; oversaw data management and processing of imaging data from ~700 participants.
+    - title: Research Engineer
       institution: Niramai Health Analytix, Bengaluru
       year: 2025 - 2026
       description:
-        - Thermalytix — AI + thermal imaging for early, non-invasive breast-cancer screening.
-        - Worked across research, production, and business teams on machine-learning and deployment work.
+        - Aug 2025 – Aug 2026, supervised by Dr. Geetha Manjunath.
+        - Led continued self-supervised pretraining of a vision foundation model (DINOv2) for thermal breast imaging.
+        - Led the migration of clinical imaging software from cloud infrastructure to standalone edge hardware, in collaboration with Intel; presented the work at the Intel Client Ecosystem Symposium 2026, Taipei.
+        - Deployed the screening platform on-site at a public super-speciality hospital near Delhi.
     - title: Project Associate
       institution: Vision and AI Lab (VAL), CDS, Indian Institute of Science, Bengaluru
-      year: # [confirm] dates
+      year: 2024 - 2025
       description:
-        - Computer vision and medical imaging research.
-    - title: Maintainer
-      institution: Nipoppy
-      year: 2026 - present
+        - Aug 2024 – Aug 2025, PI Prof. Venkatesh Babu. EMSTAR-funded project with Prof. Vinod Menon and Dr. Srikanth Ryali (Stanford Medicine) and Prof. Neelam Sinha (CBR, IISc).
+        - Led a cross-population brain-age study, training a lightweight 3D CNN on structural MRI from 3,166 cognitively healthy individuals across 7 international cohorts.
+        - Used explainable AI to identify neuroanatomical aging markers shared across populations, and tested how population diversity in training affects generalization to an unseen population.
+    - title: Research Intern
+      institution: Centre for Brain Research (CBR), Indian Institute of Science, Bengaluru
+      year: 2023 - 2024
       description:
-        - Contributing to open, reproducible neuroimaging workflows.
+        - Aug 2023 – Jun 2024, PI Prof. Neelam Sinha, Multi-Modal Neuroimaging Lab.
+        - Non-linear and topological fMRI biomarkers of mild cognitive impairment, on the Tata Longitudinal Study of Aging (TLSA) and ADNI.
+        - First-author papers at ISBI 2024 (recurrence-plot embeddings) and ICPR 2024 (persistent homology).
 
 - title: Open Source Projects
   type: time_table
   contents:
     - title: <a href="https://blackpearl006.github.io/NeuroDataHub/">NeuroDataHub</a>
-      year: 2025 - now
-      description: Open-source catalogue and downloader for 50+ public neuroimaging datasets (50,000+ brain scans).
+      year: 2025 - present
+      description: Open data-discovery platform and downloader for 50 public neuroimaging datasets (50,000+ brain scans). 1,100+ visitors from 50+ countries.
+    - title: NeuroLight
+      year: 2024
+      description: Lightweight PyTorch framework for neuroimaging analysis, with standardized I/O, cross-validation, weighted losses for class imbalance, and distributed data-parallel training.
+    - title: NeuroAI-Template
+      year: 2026
+      description: Interactive web template for sharing neuroimaging results, mapping atlas ROI values onto a 3D brain.
+
+- title: Teaching and Outreach
+  type: time_table
+  contents:
+    - title: Technical Instructor
+      institution: <a href="https://ihub-data.ai/archives/courses/cross-skilling-programs-for-marginalised-communities/">iHub-Data (IIIT Hyderabad) Cross-skilling Programs for Marginalised Communities</a>, Department of Science and Technology, Government of India
+      year: 2026
+      description:
+        - Machine Learning in Healthcare (medical image analysis) program, AM Reddy Group of Institutions, Narasaraopeta, Andhra Pradesh, 2–11 Jan 2026.
+        - Sessions on ML for medical imaging for 79 students from Scheduled Tribe communities, alongside Prof. Neelam Sinha (IISc).
+    - title: Invited Talk and Tutorial
+      institution: National Workshop on Topology for Data Analysis, Kochi
+      year: 2025
+      description:
+        - Topological data analysis in neuroscience, for ~70 faculty members, research scholars, and students.
+    - title: Teaching Assistant
+      institution: Indian Institute of Science
+      description:
+        - CBR201, Machine Learning for Neuroimaging.
+    - title: Mentoring and Open Educational Content
+      description:
+        - Mentored 2 junior researchers, whose work led to journal papers.
+        - Medium guides (1,000+ reads) and Kaggle notebooks and datasets (100+ upvotes, 30+ student projects).
 
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2026
+      items:
+        - Selected as an industry delegate to the Intel Client Ecosystem Symposium, Taipei (fully funded).
     - year: 2025
       items:
         - Frontiers in Neuroscience paper accepted — Persistent Homology for MCI classification.
         - Gold Medal, Srinivas University.
+        - Invited talk — National Workshop on Topology for Data Analysis, Kochi.
+    - year: 2024
+      items:
+        - Dean's Best Undergraduate Project Award, Srinivas University (1st among 50+ projects).
+    - year: 2023
+      items:
+        - Selected as 1 of 15 participants nationally for the EEG workshop at Chennai Mathematical Institute and Sapien Labs (fully subsidized).
+        - Travel grant to present at the IEEE Digital Health Symposium and Roundtable, IIT Kharagpur.
+    - year: 2022 - 2023
+      items:
+        - Certificate of Merit for academic excellence, Srinivas University.
+    - year: 2020 - 2024
+      items:
+        - Chairman's Merit Scholarship, Srinivas University (100% tuition waiver, one student per department).
+
+- title: Academic Service
+  type: time_table
+  contents:
     - year: 2025
       items:
-        - Invited talk — National Workshop on Topology for Data Analysis, Kochi.
+        - Program Committee Member, AIIIMA 2025.
+    - year: 2024
+      items:
+        - Reviewer, ICPR 2024.
+        - Volunteer, ICVGIP 2024.
 
 - title: Academic Interests
   type: nested_list
   contents:
     - title: Neuroimaging & medical image analysis
       items:
+        - Longitudinal modelling of Alzheimer's disease progression from PET and MRI.
         - MRI-based modeling of brain health and neurodegeneration.
         - Cross-cohort harmonization and site effects.
     - title: Machine learning
@@ -73,3 +156,6 @@
         - Foundation models for neuroimaging.
         - Federated learning across imaging sites.
         - Topological data analysis.
+    - title: Neuroinformatics
+      items:
+        - Reproducible, FAIR neuroimaging workflows and open research software.

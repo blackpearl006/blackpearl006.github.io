@@ -1,0 +1,179 @@
+/*******************************************************************************
+ * Minimal, serif, text-first overrides. Imported last in main.scss so the
+ * upstream al-folio styles stay untouched.
+ ******************************************************************************/
+
+$serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+:root {
+  --global-bg-color: #fbfaf7;
+  --global-card-bg-color: #fbfaf7;
+  --global-text-color: #1c1b19;
+  --global-text-color-light: #6f6b64;
+  --global-theme-color: #2f5d8a;
+  --global-hover-color: #2f5d8a;
+  --global-divider-color: rgba(28, 27, 25, 0.1);
+  --global-footer-bg-color: #fbfaf7;
+  --global-footer-text-color: #6f6b64;
+  --global-footer-link-color: #1c1b19;
+  --global-code-bg-color: rgba(28, 27, 25, 0.05);
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #161615;
+  --global-card-bg-color: #161615;
+  --global-text-color: #e6e3dc;
+  --global-text-color-light: #9a968e;
+  --global-theme-color: #8fb3d9;
+  --global-hover-color: #8fb3d9;
+  --global-divider-color: rgba(230, 227, 220, 0.12);
+  --global-footer-bg-color: #161615;
+  --global-footer-text-color: #9a968e;
+  --global-footer-link-color: #e6e3dc;
+  --global-code-bg-color: rgba(230, 227, 220, 0.06);
+}
+
+body {
+  font-family: $serif;
+  font-size: 1.075rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.post-title,
+.page-title {
+  font-family: $serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p,
+li {
+  font-family: $serif;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+// Navbar: flat, no border, lowercase links
+.navbar {
+  border-bottom: none;
+  opacity: 1;
+  background-color: var(--global-bg-color) !important;
+  font-family: $serif;
+
+  .navbar-brand {
+    font-weight: 600 !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .nav-link {
+    color: var(--global-text-color-light) !important;
+    font-size: 0.95rem;
+  }
+
+  .nav-item.active > .nav-link {
+    color: var(--global-text-color) !important;
+    font-weight: 600 !important;
+  }
+}
+
+// Footer: quiet line instead of a dark bar
+footer.fixed-bottom,
+footer.sticky-bottom {
+  background-color: var(--global-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.8rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// Page headers
+.post-header {
+  margin-bottom: 2rem;
+
+  .post-title {
+    font-size: 2.1rem;
+  }
+
+  .post-description {
+    font-style: italic;
+    color: var(--global-text-color-light);
+  }
+}
+
+// Cards and buttons lose their shadows
+.card,
+.btn,
+.z-depth-1,
+.z-depth-2 {
+  box-shadow: none !important;
+}
+
+.card {
+  border: 1px solid var(--global-divider-color);
+}
+
+// Publications: lighter year headings, less chrome
+.publications {
+  h2.bibliography {
+    color: var(--global-text-color-light);
+    border-top: none;
+    font-size: 1.1rem;
+    text-align: left;
+    padding-top: 1.5rem;
+  }
+
+  ol.bibliography li .preview {
+    border-radius: 4px;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .links a.btn {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 3px;
+    text-decoration: none;
+  }
+}
+
+// Blog post list
+.post-list li {
+  border-bottom: 1px solid var(--global-divider-color);
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// Long-form posts read like an essay
+.post article {
+  font-size: 1.1rem;
+
+  blockquote {
+    border-left: 2px solid var(--global-divider-color);
+    font-style: italic;
+  }
+}
