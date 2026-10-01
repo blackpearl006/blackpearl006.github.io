@@ -17,4 +17,8 @@ nav_order: 2
 
 {% bibliography %}
 
+<h2 class="bibliography">software &amp; data</h2>
+
+{% bibliography --file software --group_by none %}
+
 </div>

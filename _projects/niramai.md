@@ -8,8 +8,11 @@ category: work
 related_publications: false
 ---
 
-During a year at **Niramai Health Analytix** (Bengaluru), I worked across research, production, and business teams on **Thermalytix** — an AI-powered breast-cancer screening solution that combines thermal imaging with machine learning. The approach is **radiation-free, non-contact, and painless**, and works across women of all ages and breast densities, making early screening more accessible.
+From August 2025 to August 2026, I was a **Research Engineer** at **Niramai Health Analytix** (Bengaluru), working under Dr. Geetha Manjunath on **Thermalytix**, an AI-powered breast-cancer screening solution that combines thermal imaging with machine learning. The approach is **radiation-free, non-contact, and painless**, and works across women of all ages and breast densities, making early screening more accessible.
 
-The pipeline analyzes hundreds of thousands of temperature points across a thermal scan and produces a quantitative **breast-health score** to help clinicians flag abnormal regions for follow-up.
+I worked on two projects:
+
+- **Vision foundation model (R&D).** I led continued self-supervised pretraining of a medical vision foundation model (DINOv2) on clinical thermal images, adapting the DINO recipe to the thermal modality with modality-specific augmentations and weighted sampling for class imbalance.
+- **Edge engineering and hospital deployment.** In collaboration with Intel, I led the migration of the clinical imaging software from cloud infrastructure to standalone edge hardware, and presented the work at the **Intel Client Ecosystem Symposium 2026** in Taipei. I also carried out the on-site deployment of the screening platform at a public super-speciality hospital near Delhi, working with clinicians, technicians, and hospital IT teams.
 
 🔗 **Learn more:** [niramai.com](https://niramai.com/)

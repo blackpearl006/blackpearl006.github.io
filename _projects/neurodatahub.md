@@ -20,7 +20,7 @@ The goal is simple: **accelerate neuroimaging research** by centralizing and org
 
 🔗 **Explore:** [NeuroDataHub](https://blackpearl006.github.io/NeuroDataHub/) · **Code:** [GitHub](https://github.com/blackpearl006/NeuroDataHub) · **Record:** [Zenodo](https://zenodo.org/records/15687811)
 
-More than **1,000 people** have used NeuroDataHub. Its analytics also show ChatGPT among its largest referral sources.
+NeuroDataHub has reached more than **1,100 visitors** from **50+ countries**. Its analytics also show ChatGPT among its largest referral sources.
 
 ---
 
@@ -48,7 +48,7 @@ More than **1,000 people** have used NeuroDataHub. Its analytics also show ChatG
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/neurodatahub/screenshot.png" title="Home page screenshot" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/neurodatahub/Screenshot.png" title="Home page screenshot" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid loading="eager" path="assets/img/neurodatahub/table.png" title="Table view" class="img-fluid rounded z-depth-1" %}
