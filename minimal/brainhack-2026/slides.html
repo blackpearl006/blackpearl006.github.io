@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Butterflies and rainbows</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #e8eaed; overflow: hidden; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #202124; }
+
+  /* 1280x720 canvas, scaled to the window by JS */
+  #deck { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; transform-origin: center; }
+  .slide { position: absolute; inset: 0; background: #fff; padding: 64px 80px; display: none; flex-direction: column; overflow: hidden; }
+  .slide.on { display: flex; }
+  .notes { display: none; }
+
+  h1 { font-size: 52px; font-weight: 700; line-height: 1.12; color: #000; }
+  h2 { font-size: 40px; font-weight: 700; line-height: 1.15; color: #000; margin-bottom: 36px; }
+  p, li { font-size: 28px; line-height: 1.4; }
+  ul { list-style: disc; padding-left: 36px; }
+  li { margin-bottom: 16px; }
+  li::marker { color: #1a73e8; }
+  .muted { color: #5f6368; }
+  .small { font-size: 18px; }
+  .blue { color: #1a73e8; }
+  .grow { flex: 1; }
+  .src { position: absolute; left: 80px; right: 120px; bottom: 28px; font-size: 15px; color: #80868b; }
+  #count { position: absolute; right: 24px; bottom: 18px; font-size: 15px; color: #9aa0a6; z-index: 5; }
+
+  /* claude-only and plain-only bits */
+  .c-only { display: none !important; }
+  body.claude .p-only { display: none !important; }
+
+  /* title / closing */
+  .title-grid { display: grid; grid-template-columns: 1fr 330px; gap: 56px; align-items: center; height: 100%; }
+  .cool { font-size: 260px; line-height: 1; margin-bottom: 20px; }
+  .title-grid h1 { font-size: 50px; }
+  .title-grid .sub { font-size: 28px; margin-top: 22px; color: #3c4043; }
+  .byline { font-size: 20px; color: #5f6368; margin-top: 36px; line-height: 1.5; }
+  .qr { text-align: center; }
+  .qr img { width: 300px; height: 300px; display: block; margin: 0 auto 12px; }
+  .qr p { font-size: 17px; color: #3c4043; word-break: break-all; }
+
+  /* slide 2: pipeline 3/4 + question 1/4 */
+  .split { display: grid; grid-template-columns: 3fr 1fr; gap: 32px; flex: 1; }
+  .pipe { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .step { border: 2px solid #dadce0; display: flex; flex-direction: column; align-items: center; padding: 18px 8px 12px; position: relative; }
+  .step + .step::before { content: "\2192"; position: absolute; left: -16px; top: 50%; transform: translateY(-50%); font-size: 26px; color: #5f6368; background: #fff; }
+  .step h3 { font-size: 21px; font-weight: 700; text-align: center; min-height: 52px; color: #000; }
+  .step .icons { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; gap: 8px; }
+  .step .glyph { font-size: 92px; line-height: 1; }
+  .lg { display: flex; flex-direction: column; align-items: center; }
+  .lg img.s { height: 54px; width: auto; max-width: 120px; object-fit: contain; }
+  .lg img.w { height: 38px; width: auto; max-width: 128px; object-fit: contain; }
+  .lg figcaption { font-size: 13px; color: #5f6368; margin-top: 3px; text-align: center; }
+  .step .word { font-size: 24px; font-weight: 700; color: #3c4043; }
+  .then { border: 2px dashed #1a73e8; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .then .q { font-size: 200px; font-weight: 700; color: #1a73e8; line-height: 1; }
+  .then p { font-size: 30px; font-weight: 700; text-align: center; padding: 0 14px; }
+  .then .then-sub { font-size: 19px; font-weight: 400; color: #5f6368; margin-top: 14px; }
+
+  /* slide 3 */
+  .aside { border-left: 6px solid #1a73e8; padding: 10px 0 10px 22px; margin-top: 12px; font-size: 26px; }
+
+  /* slide 4: recreated usage panel */
+  .usage { background: #1f1f1f; color: #ececec; border-radius: 10px; padding: 34px 40px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; margin: 10px 0 40px; }
+  .usage .t { font-size: 30px; font-weight: 600; margin-bottom: 26px; }
+  .usage .l { color: #6ea8fe; font-size: 22px; text-decoration: underline; margin-bottom: 30px; }
+  .usage .row { display: grid; grid-template-columns: 300px 1fr 150px; align-items: center; gap: 30px; }
+  .usage .m { font-size: 26px; }
+  .usage .r { font-size: 22px; color: #a0a0a0; margin-top: 8px; }
+  .usage .bar { height: 14px; background: #0c2340; border-radius: 7px; overflow: hidden; }
+  .usage .bar i { display: block; height: 100%; width: 13%; background: #2f7be5; border-radius: 7px; }
+  .usage .pct { font-size: 24px; text-align: right; }
+  .burn { font-size: 46px; font-weight: 700; color: #000; }
+
+  /* slide 5 */
+  .big-lines { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .big-lines p { font-size: 56px; font-weight: 700; line-height: 1.15; color: #000; }
+  .big-lines p.blue { color: #1a73e8; }
+
+  /* slide 6 */
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .cols h3 { font-size: 30px; color: #000; margin-bottom: 12px; }
+  .cols p { font-size: 26px; color: #3c4043; }
+  .closer { font-size: 30px; font-weight: 700; color: #000; margin-top: auto; }
+
+  /* slide 7 */
+  .gif { display: block; height: 470px; margin: 0 auto; border: 1px solid #dadce0; }
+  .caption { text-align: center; font-size: 21px; color: #5f6368; margin-top: 18px; }
+
+  /* slide 8 */
+  ol.steps { list-style: none; counter-reset: s; }
+  ol.steps li { counter-increment: s; display: grid; grid-template-columns: 70px 1fr; margin-bottom: 30px; }
+  ol.steps li::before { content: counter(s); font-size: 48px; font-weight: 700; color: #1a73e8; line-height: 1; }
+  ol.steps b { color: #000; }
+  code { font-family: Menlo, monospace; font-size: 0.85em; background: #f1f3f4; padding: 2px 6px; }
+
+  /* closing */
+  .closing { display: grid; grid-template-columns: 1fr 250px; gap: 48px; height: 100%; }
+  .closing .cool { font-size: 150px; margin-bottom: 8px; }
+  .closing .emo { font-size: 40px; margin-top: 6px; }
+  .closing h1 { font-size: 40px; }
+  .closing h4 { font-size: 24px; color: #5f6368; font-weight: 400; margin: 14px 0 10px; }
+  .closing li { font-size: 25px; margin-bottom: 10px; }
+  .closing .qr img { width: 210px; height: 210px; }
+  .closing .qr + .qr { margin-top: 18px; }
+  .closing .qr p { font-size: 15px; }
+
+  .divider { justify-content: center; }
+  .divider h1 { color: #5f6368; }
+
+  /* speaker notes overlay */
+  #notes { position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow: auto; background: rgba(32,33,36,.95); color: #fff; font: 17px/1.5 Arial, sans-serif; padding: 16px 28px; display: none; z-index: 10; }
+  #notes.on { display: block; }
+  #notes li { font-size: 17px; margin-bottom: 4px; }
+  #notes ul { padding-left: 22px; }
+
+  /* =========================================================
+     "claude" theme: deliberately every AI-deck tell at once
+     ========================================================= */
+  body.claude { background: #e9e4d8; color: #3d3929; }
+  body.claude .slide { background: #F4F1EA; background-image: radial-gradient(circle at 92% 8%, rgba(217,119,87,.16), transparent 42%), radial-gradient(circle at 4% 96%, rgba(217,119,87,.10), transparent 40%); }
+  body.claude .c-only { display: revert !important; }
+  body.claude h1, body.claude h2, body.claude h3, body.claude .burn, body.claude .big-lines p, body.claude .closer, body.claude .then p, body.claude .step h3 {
+    font-family: "Iowan Old Style", "Palatino", Georgia, serif; font-weight: 500; color: #1f1d16; letter-spacing: -0.01em; }
+  body.claude .eyebrow { display: block !important; font: 600 15px/1 Menlo, monospace; letter-spacing: .18em; text-transform: uppercase; color: #D97757; margin-bottom: 14px; }
+  body.claude h2 { margin-bottom: 30px; }
+  body.claude .blue, body.claude .big-lines p.blue, body.claude .then .q { color: #D97757; }
+  body.claude ul { list-style: none; padding-left: 0; }
+  body.claude ul li { display: flex; gap: 16px; align-items: baseline; background: #fff; border-radius: 16px; padding: 12px 20px; box-shadow: 0 4px 14px rgba(0,0,0,.08); margin-bottom: 12px; font-size: 25px; }
+  body.claude ul li::before { content: attr(data-e); flex: none; }
+  body.claude .step, body.claude .then, body.claude .usage, body.claude .gif, body.claude .cols > div { border-radius: 20px; }
+  body.claude .step { background: #fff; border: 1px solid #e6dfd0; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+  body.claude .step + .step::before { background: transparent; color: #D97757; }
+  body.claude .then { border-color: #D97757; background: rgba(217,119,87,.06); }
+  body.claude .cols > div { background: #fff; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+  body.claude .aside, body.claude .insight { border: 0; background: linear-gradient(90deg, rgba(217,119,87,.16), rgba(217,119,87,.04)); border-radius: 14px; padding: 14px 22px; }
+  body.claude .insight { margin-top: auto; font-size: 22px; }
+  body.claude .insight b { color: #D97757; }
+  body.claude ol.steps li { background: #fff; border-radius: 18px; padding: 16px 22px; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+  body.claude ol.steps li::before { color: #D97757; font-family: Georgia, serif; content: "0" counter(s); }
+  body.claude code { background: #efe8da; border-radius: 6px; }
+  body.claude li::marker { color: #D97757; }
+  body.claude #count { font-family: Menlo, monospace; color: #b5a993; }
+  .eyebrow { display: none; }
+</style>
+</head>
+<body>
+<div id="deck">
+
+<!-- 1. Title -->
+<section class="slide">
+  <div class="title-grid">
+    <div>
+      <span class="eyebrow">BRAINHACK MONTREAL · UNCONFERENCE · 2026</span>
+      <div class="cool">😎</div>
+      <h1>The butterflies, rainbows and unicorns of vibe coding <span class="c-only">✨</span></h1>
+      <p class="sub">Not everything about AI is butterflies and rainbows. But some of it is. 🦋 🌈 🦄</p>
+      <p class="byline">Ninad Aithal</p>
+    </div>
+    <div class="qr">
+      <img src="assets/qr-demo.svg" alt="QR code to the demo website">
+      <p>blackpearl006.github.io/<br>neuroai-template-demo</p>
+    </div>
+  </div>
+  <aside class="notes"><ul>
+    <li>Hi, I'm Ninad. Other sessions here were worried about AI. Fair. I want to show one case where it was just good.</li>
+    <li>Scan the QR now. It's the website I'll talk about. Play with it while I talk.</li>
+  </ul></aside>
+</section>
+
+<!-- 2. Formal intro: the usual pipeline -->
+<section class="slide">
+  <span class="eyebrow">THE STATUS QUO</span>
+  <h2>A typical neuroimaging project</h2>
+  <div class="split">
+    <div class="pipe">
+      <div class="step"><h3>Ask a question</h3><div class="icons"><span class="glyph">🤔</span></div></div>
+      <div class="step"><h3>Find data</h3><div class="icons"><figure class="lg"><img class="w" src="assets/openneuro.svg" alt="OpenNeuro"></figure><figure class="lg"><img class="s" src="assets/neurobagel.png" alt="Neurobagel"><figcaption>Neurobagel</figcaption></figure><figure class="lg"><img class="s" src="assets/neurodatahub.svg" alt="NeuroDataHub"></figure><figure class="lg"><img class="s" style="height:76px" src="assets/conp.png" alt="CONP"></figure><figure class="lg"><img class="s" src="assets/datalad.svg" alt="DataLad"><figcaption>DataLad</figcaption></figure></div></div>
+      <div class="step"><h3>Preprocess</h3><div class="icons"><figure class="lg"><img class="w" src="assets/bids.png" alt="BIDS"></figure><figure class="lg"><img class="s" src="assets/nipoppy.svg" alt="Nipoppy"><figcaption>Nipoppy</figcaption></figure><figure class="lg"><img class="s" src="assets/nipreps.svg" alt="NiPreps / fMRIPrep"><figcaption>NiPreps / fMRIPrep</figcaption></figure></div></div>
+      <div class="step"><h3>Analyze</h3><div class="icons"><figure class="lg"><img class="s" src="assets/nilearn.png" alt="nilearn"></figure><figure class="lg"><img class="s" src="assets/sklearn.svg" alt="scikit-learn"></figure><figure class="lg"><img class="w" src="assets/pytorch.svg" alt="PyTorch"></figure><figure class="lg"><img class="s" src="assets/pydfc.png" alt="PyDFC"></figure><figure class="lg"><img class="w" src="assets/pcntoolkit.png" alt="PCNtoolkit"><figcaption>PCNtoolkit</figcaption></figure></div></div>
+      <div class="step"><h3>Publish &amp; share</h3><div class="icons"><figure class="lg"><img class="w" src="assets/arxiv.svg" alt="arXiv"></figure><figure class="lg"><img class="w" src="assets/biorxiv.png" alt="bioRxiv"></figure><figure class="lg"><img class="s" src="assets/joss.png" alt="JOSS"><figcaption>JOSS</figcaption></figure><figure class="lg"><img class="s" src="assets/github.svg" alt="GitHub"><figcaption>GitHub</figcaption></figure><figure class="lg"><img class="w" src="assets/zenodo.svg" alt="Zenodo"></figure></div></div>
+    </div>
+    <div class="then"><span class="q">?</span><p>Who actually sees it?</p><p class="then-sub">1 PDF among 40,363 on arXiv last month</p></div>
+  </div>
+  <aside class="notes"><ul>
+    <li>This is the project we all know. Question, data, preprocessing, analysis, paper.</li>
+    <li>Every box is full of great open tools. Plug: Neurobagel and NeuroDataHub to find data, Nipoppy to preprocess.</li>
+    <li>Then the paper is out. Who actually sees it? It is one PDF among 40,363 arXiv submissions last month.</li>
+  </ul></aside>
+</section>
+
+<!-- 3. Getting seen is hard -->
+<section class="slide">
+  <span class="eyebrow">THE PROBLEM — VISIBILITY</span>
+  <h2>Getting your work seen is hard</h2>
+  <ul>
+    <li data-e="📈">arXiv got 40,363 submissions in September 2026.</li>
+    <li data-e="🚦">Since October 1, arXiv takes at most 2 submissions per author per month.</li>
+    <li data-e="💻">In computer vision and ML, many NeurIPS and CVPR papers come with a project website.</li>
+    <li data-e="🧠">Why not papers in Nature or Science Advances? Or from The Neuro and our hospitals?</li>
+  </ul>
+  <p class="aside"><span class="c-only">💡 </span>Your paper's figures are already great website material.</p>
+  <p class="src">Sources: arXiv monthly submission statistics (arxiv.org/stats/monthly_submissions); F. Jones, "arXiv's new preprint submission cap divides opinion", Times Higher Education, 2 Oct 2026.</p>
+  <aside class="notes"><ul>
+    <li>There are too many papers. arXiv now even limits how many you can submit.</li>
+    <li>CV people solved this years ago: every big paper has a nice project page.</li>
+    <li>Neuro papers have amazing figures. They sit in a PDF that nobody opens.</li>
+  </ul></aside>
+</section>
+
+<!-- 4. Silly intro -->
+<section class="slide">
+  <span class="eyebrow">THE ORIGIN STORY</span>
+  <h2>Meanwhile, one Saturday morning…</h2>
+  <div class="usage">
+    <div class="t">Weekly limits</div>
+    <div class="l">Learn more about usage limits</div>
+    <div class="row">
+      <div><div class="m">All models</div><div class="r">Resets Tue 2:00 AM</div></div>
+      <div class="bar"><i></i></div>
+      <div class="pct">13% used</div>
+    </div>
+  </div>
+  <p class="burn">Resets on Tuesday. Burn, burn, burn. 🔥</p>
+  <aside class="notes"><ul>
+    <li>The honest version: one Saturday I opened my Claude usage page.</li>
+    <li>Almost nothing used. It resets on Tuesday. Unused tokens are wasted tokens.</li>
+    <li>So: burn, burn, burn.</li>
+  </ul></aside>
+</section>
+
+<!-- 5. Synthesis -->
+<section class="slide">
+  <span class="eyebrow">THE INSIGHT</span>
+  <div class="big-lines">
+    <p>Research needs to be seen.</p>
+    <p>I had tokens to burn.</p>
+    <p class="blue">So I built a website template for neuro papers.</p>
+  </div>
+  <aside class="notes"><ul>
+    <li>Two problems met: work that needs visibility, and tokens that needed a job.</li>
+  </ul></aside>
+</section>
+
+<!-- 6. Shoulders -->
+<section class="slide">
+  <span class="eyebrow">STANDING ON THE SHOULDERS OF GIANTS</span>
+  <h2>It worked because the pieces already existed</h2>
+  <div class="cols">
+    <div><h3>NiiVue</h3><p>A brain viewer that runs in the browser. Recent, stable and fast. It does the hard part.</p></div>
+    <div><h3>Clarity template</h3><p>A minimal, hackable research page by Shikun Liu. The design started there. Thank you!</p></div>
+    <div><h3>My groundwork</h3><p>Two earlier NiiVue sites, NeuroDataHub (Vue + Clarity) and web coursework. I knew enough to steer.</p></div>
+  </div>
+  <p class="closer">From scratch, this would have been bad. Adapting good tools made it good.</p>
+  <p class="muted small" style="margin-top:14px">Built with Vite, React, Tailwind, Three.js and NiiVue.</p>
+  <aside class="notes"><ul>
+    <li>Credit where it's due. NiiVue is the reason a 3D brain in a web page is easy now.</li>
+    <li>Clarity gave the clean look. I had built websites before, so I could judge the output.</li>
+    <li>AI was the glue, not the foundation.</li>
+  </ul></aside>
+</section>
+
+<!-- 7. Demo -->
+<section class="slide">
+  <span class="eyebrow">THE DEMO</span>
+  <h2 style="margin-bottom:20px">From a static figure to a brain you can rotate</h2>
+  <img class="gif" src="assets/demo.gif" alt="Website demo: region table and 3D brain coloured by importance">
+  <p class="caption">Atlases: Brainnetome, Schaefer-400, AAL, Harvard-Oxford, Yeo, Glasser</p>
+  <aside class="notes"><ul>
+    <li>Compare this to the 2D figure in a paper. Hover a region, see its value. Rotate. Switch atlas.</li>
+    <li>Table and brain are linked. Region-level results finally look like what they are.</li>
+    <li>(Optional: switch to the live site in the browser.)</li>
+  </ul></aside>
+</section>
+
+<!-- 8. Adopt -->
+<section class="slide">
+  <span class="eyebrow">HOW IT WORKS</span>
+  <h2>Make it yours in three steps</h2>
+  <ol class="steps">
+    <li><p><b>Put your results in a CSV.</b> One row per region: <code>region,value</code>. Often it's already in your supplement.</p></li>
+    <li><p><b>Give your agent the paper and <code>AGENTS.md</code>.</b> Or edit the text files by hand. No code.</p></li>
+    <li><p><b>Push to GitHub.</b> GitHub Pages puts it online.</p></li>
+  </ol>
+  <p class="insight c-only">✨ <b>Key takeaway:</b> Give it your paper → get a website.</p>
+  <p class="closer p-only">Give it your paper. Get a website.</p>
+  <aside class="notes"><ul>
+    <li>No React knowledge needed. All content lives in Markdown and CSV files.</li>
+    <li>There is an AGENTS.md runbook. Your agent reads your paper and fills in the site. Rule one: never invent numbers.</li>
+  </ul></aside>
+</section>
+
+<!-- 9. Why good AI use -->
+<section class="slide">
+  <span class="eyebrow">WHY THIS MATTERS</span>
+  <h2>Why this is a good job for AI</h2>
+  <ul>
+    <li data-e="🔒">No human data. Only processed results that are already published.</li>
+    <li data-e="🎈">Low stakes. If a page breaks, nobody gets hurt.</li>
+    <li data-e="🧹">No maintenance. It only has to stay online.</li>
+    <li data-e="🦄">Without AI, I would not have built this. I'd have minded my own business.</li>
+  </ul>
+  <aside class="notes"><ul>
+    <li>This is the core of my optimistic point. Not every AI use is risky.</li>
+    <li>Nobody will review or maintain a paper website. It just needs to exist and be accessible.</li>
+    <li>For me, the choice was not "AI site vs. hand-made site". It was "AI site vs. no site".</li>
+  </ul></aside>
+</section>
+
+<!-- 10. Closing -->
+<section class="slide">
+  <div class="closing">
+    <div>
+      <span class="eyebrow">LET'S DISCUSS</span>
+      <div class="cool">😎</div>
+      <h1>Some of it is butterflies and rainbows.</h1>
+      <p class="emo">🦋 🌈 🦄</p>
+      <h4>Let's talk</h4>
+      <ul>
+        <li data-e="🌈">Where has AI been plainly good for you?</li>
+        <li data-e="🌐">What stops you from putting your paper on a website?</li>
+        <li data-e="🧹">Does it matter if nobody maintains code like this?</li>
+        <li data-e="🕵️">Could you tell these slides were made with AI?</li>
+      </ul>
+    </div>
+    <div>
+      <div class="qr"><img src="assets/qr-demo.svg" alt="QR code to the demo website"><p>Website</p></div>
+      <div class="qr"><img src="assets/qr-repo.svg" alt="QR code to the GitHub repository"><p>Code on GitHub</p></div>
+    </div>
+  </div>
+  <aside class="notes"><ul>
+    <li>Open it up. Last question is the hook: press T to show the "Claude" version of this deck.</li>
+    <li>Point: AI decks have a look. You can spot it. This plain one was made with AI too.</li>
+  </ul></aside>
+</section>
+
+<!-- Backups -->
+<section class="slide divider">
+  <h1>Backup slides</h1>
+  <aside class="notes"><ul><li>Only if there's time or a question.</li></ul></aside>
+</section>
+
+<section class="slide">
+  <span class="eyebrow">FOR CLINICIANS</span>
+  <h2>Region-level results, the way clinicians think</h2>
+  <ul>
+    <li data-e="🧭">Every region has a name, a value and a place in 3D.</li>
+    <li data-e="🔍">Sort the table, then find the same region on the brain.</li>
+    <li data-e="🏥">Precision-medicine results become easier to inspect and to discuss.</li>
+  </ul>
+  <aside class="notes"><ul><li>If a clinician wants to explore results, this is much friendlier than a supplement table.</li></ul></aside>
+</section>
+
+<section class="slide">
+  <span class="eyebrow">META</span>
+  <h2>This deck has an evil twin</h2>
+  <p>Press <b>T</b>.</p>
+  <p class="muted" style="margin-top:18px">Same words, same slides. One looks like a person made it. One looks like every AI deck you've seen this year.</p>
+  <aside class="notes"><ul><li>Use this if you didn't do the T reveal live.</li></ul></aside>
+</section>
+
+</div>
+<div id="count"></div>
+<div id="notes"></div>
+
+<script>
+  var slides = document.querySelectorAll('.slide');
+  var deck = document.getElementById('deck');
+  var count = document.getElementById('count');
+  var notes = document.getElementById('notes');
+  var i = Math.max(0, Math.min(slides.length - 1, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+
+  function fit() {
+    var s = Math.min(innerWidth / 1280, innerHeight / 720);
+    deck.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (el, k) { el.classList.toggle('on', k === i); });
+    count.textContent = (i + 1) + ' / ' + slides.length;
+    var nt = slides[i].querySelector('.notes');
+    notes.innerHTML = nt ? nt.innerHTML : '';
+    history.replaceState(null, '', '#' + (i + 1));
+  }
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown') show(i + 1);
+    else if (k === 'ArrowLeft' || k === 'PageUp') show(i - 1);
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(slides.length - 1);
+    else if (k === 't' || k === 'T') document.body.classList.toggle('claude');
+    else if (k === 'n' || k === 'N') notes.classList.toggle('on');
+    else if (k === 'f' || k === 'F') {
+      if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen();
+    } else return;
+    e.preventDefault();
+  });
+  document.addEventListener('click', function (e) { if (!notes.contains(e.target)) show(i + (e.clientX < innerWidth / 3 ? -1 : 1)); });
+  addEventListener('resize', fit);
+  if (/claude/.test(location.search)) document.body.classList.add('claude');
+  fit(); show(i);
+</script>
+</body>
+</html>
