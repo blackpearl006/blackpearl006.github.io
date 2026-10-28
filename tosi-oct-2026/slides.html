@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Science in Action: NeuroDataHub</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #e8eaed; overflow: hidden; }
+  body { font-family: Arial, Helvetica, sans-serif; }
+
+  /* 1280x720 canvas, scaled to the window by JS */
+  #deck { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; transform-origin: center; background: #fff; }
+  #deck img { position: absolute; display: block; }
+  #deck img[hidden] { display: none; }
+  #frame { left: 0; top: 0; width: 1280px; height: 720px; }
+  #count { position: absolute; right: 24px; bottom: 18px; font-size: 15px; color: #9aa0a6; z-index: 5; }
+</style>
+</head>
+<body>
+
+<div id="deck">
+  <img id="frame" alt="">
+  <img id="gif" alt="" hidden>
+</div>
+<div id="count"></div>
+
+<script>
+  /* One step per click of the original deck. Each slide is [name, number of clicks, optional GIF overlay]. */
+  var DECK = [
+    ['s-01', 0], ['s-02', 0],
+    ['s03', 1], ['s04', 3], ['s05', 6], ['s06', 5],
+    ['s07', 6, { src: 'slides/mad.gif', from: 2, x: 700.0, y: 169.1, w: 490.9, h: 229.5 }],
+    ['s-08', 0],
+    ['s09', 3, { src: '../brainhack-2026/assets/demo.gif', from: 2, x: 762.8, y: 174.9, w: 449.6, h: 250.0 }],
+    ['s10', 2], ['s-11', 0]
+  ];
+  var steps = [], first = [];
+  DECK.forEach(function (d, n) {
+    first.push(steps.length);
+    for (var k = 0; k <= d[1]; k++) {
+      steps.push({ slide: n, img: 'slides/' + (d[1] ? d[0] + '-' + k : d[0]) + '.webp', gif: d[2] && k >= d[2].from ? d[2] : null });
+    }
+  });
+
+  var deck = document.getElementById('deck');
+  var frame = document.getElementById('frame');
+  var gif = document.getElementById('gif');
+  var count = document.getElementById('count');
+  var i = first[Math.max(0, Math.min(DECK.length - 1, (parseInt(location.hash.slice(1), 10) || 1) - 1))];
+
+  function fit() {
+    var s = Math.min(innerWidth / 1280, innerHeight / 720);
+    deck.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(steps.length - 1, n));
+    var s = steps[i];
+    frame.src = s.img;
+    if (s.gif) {
+      if (gif.getAttribute('src') !== s.gif.src) gif.src = s.gif.src;
+      gif.style.left = s.gif.x + 'px'; gif.style.top = s.gif.y + 'px';
+      gif.style.width = s.gif.w + 'px'; gif.style.height = s.gif.h + 'px';
+      gif.hidden = false;
+    } else gif.hidden = true;
+    if (steps[i + 1]) new Image().src = steps[i + 1].img;
+    count.textContent = (s.slide + 1) + ' / ' + DECK.length;
+    history.replaceState(null, '', '#' + (s.slide + 1));
+  }
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown') show(i + 1);
+    else if (k === 'ArrowLeft' || k === 'PageUp') show(i - 1);
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(steps.length - 1);
+    else if (k === 'f' || k === 'F') {
+      if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen();
+    } else return;
+    e.preventDefault();
+  });
+  document.addEventListener('click', function (e) { show(i + (e.clientX < innerWidth / 3 ? -1 : 1)); });
+  addEventListener('resize', fit);
+  fit(); show(i);
+</script>
+</body>
+</html>
